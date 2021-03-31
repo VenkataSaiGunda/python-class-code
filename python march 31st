@@ -1,0 +1,132 @@
+import openpyxl as op
+wb=op.load_workbook('/content/realestatedata.xlsx')
+mysheets=wb.sheetnames
+print("print all the sheets in the excel")
+for i in mysheets:
+  print(i)
+sheet=wb['venkata sai']
+print("type of the sheet")
+print(type(sheet))
+print("sheet name")
+print(sheet.title)
+
+
+
+#output:
+print all the sheets in the excel
+Sheet2
+venkata sai
+type of the sheet
+<class 'openpyxl.worksheet.worksheet.Worksheet'>
+sheet name
+venkata sai
+
+
+
+
+import openpyxl
+wb = openpyxl.load_workbook('/content/realestatedata.xlsx')
+mysheets = wb.sheetnames
+
+print("print all sheets in Excel Workbook")
+for x in mysheets:
+  print(x)
+
+realestatedata = wb['Sheet2']
+
+print("print type sheet")
+print(type(realestatedata))
+print("sheet name") 
+print(realestatedata.title)
+
+print("Value of A1")
+data1 = realestatedata['A1']
+print(data1.value)
+
+for i in range(1, 190):
+	print(realestatedata.cell(row=i, column=10).value)
+
+
+
+
+
+outpu:
+print all sheets in Excel Workbook
+Sheet2
+venkata sai
+print type sheet
+<class 'openpyxl.worksheet.worksheet.Worksheet'>
+sheet name
+Sheet2
+Value of A1
+None
+None
+None
+ListPrice
+1200000
+999800
+898000
+1038000
+869000
+899000
+879900
+899000
+999000
+1389000
+999900
+1050000
+788800
+998000
+899000
+1158800
+1198888
+899900
+999900
+788000
+799900
+849000
+849000
+950000
+1388000
+1450000
+1488000
+1188800
+2299990
+888000
+1099900
+839000
+859000
+
+
+
+
+
+import openpyxl
+wb = openpyxl.load_workbook('realestatedata.xlsx')
+mysheets = wb.sheetnames
+
+print("print all sheets in Excel Workbook")
+for x in mysheets:
+  print(x)
+
+realestatedata = wb['stouffville']
+
+print("print type sheet")
+print(type(realestatedata))
+print("sheet name") 
+print(realestatedata.title)
+
+print("Value of A1")
+data1 = realestatedata['A1']
+print(data1.value)
+
+print("goal = get the average of all selling prices");
+for i in range(1, 190):
+	price = realestatedata.cell(row=i, column=4).value;
+	print(price);
+	houseType = realestatedata.cell(row=i, column=1).value;
+	print(houseType);
+	description = realestatedata.cell(row=i, column=2).value;
+	print(description);
+	numberBedrooms = realestatedata.cell(row=i, column=3).value;
+	print(numberBedrooms);
