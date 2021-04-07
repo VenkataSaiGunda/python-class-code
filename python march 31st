@@ -102,31 +102,36 @@ ListPrice
 
 
 import openpyxl
-wb = openpyxl.load_workbook('realestatedata.xlsx')
+wb = openpyxl.load_workbook('/content/real_estate_data.xlsx')
 mysheets = wb.sheetnames
 
 print("print all sheets in Excel Workbook")
 for x in mysheets:
   print(x)
 
-realestatedata = wb['stouffville']
+real_estate_data = wb['Sheet2']
 
 print("print type sheet")
-print(type(realestatedata))
+print(type(real_estate_data))
 print("sheet name") 
-print(realestatedata.title)
+print(real_estate_data.title)
 
 print("Value of A1")
-data1 = realestatedata['A1']
+data1 = real_estate_data['A1']
 print(data1.value)
-
-print("goal = get the average of all selling prices");
+k=[]
+print("goal is getting the average of all selling prices");
 for i in range(1, 190):
-	price = realestatedata.cell(row=i, column=4).value;
-	print(price);
-	houseType = realestatedata.cell(row=i, column=1).value;
-	print(houseType);
-	description = realestatedata.cell(row=i, column=2).value;
-	print(description);
-	numberBedrooms = realestatedata.cell(row=i, column=3).value;
-	print(numberBedrooms);
+  price = real_estate_data.cell(row=i, column=4).value
+  print(price)
+  houseType = real_estate_data.cell(row=i, column=1).value
+  print(houseType)
+  description = real_estate_data.cell(row=i, column=2).value
+  print(description)
+  numberBedrooms = real_estate_data.cell(row=i, column=3).value
+  print(numberBedrooms)
+  houseprice=(houseType,description,numberBedrooms,price)
+  print(k.append(houseprice))
+  print(k)
+for i in k:
+  print(i)
